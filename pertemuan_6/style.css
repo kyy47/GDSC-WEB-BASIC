@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+/* body {
+  background-image: url(my-background.jpg);
+} */
+
+header {
+  box-shadow: 1px 1px 3px black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: white;
+}
+
+.navbar {
+  display: flex;
+  padding: 5px 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-list {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-list .menu {
+  color: teal;
+}
+
+.menu-list .menu:hover {
+  color: black;
+}
+
+.icon-menu {
+  display: none;
+}
+
+.icon-menu img {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.gallery-section {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-gallery {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.my-gallery .my-photo {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.my-grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow-x: hidden;
+  margin-top: 20px;
+}
+
+.my-grid-gallery .my-grid-photo {
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.my-grid-gallery .first-grid-photo,
+.my-grid-gallery .four-grid-photo,
+.my-grid-gallery .five-grid-photo {
+  grid-column: span 2;
+  aspect-ratio: 2 /1;
+}
+
+/* responsive */
+
+@media screen and (max-width: 625px) {
+  .icon-menu {
+    display: block;
+  }
+
+  .menu-list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  body {
+    background-color: #1a1a1a;
+    color: white;
+  }
+  header {
+    background-color: #1a1a1a;
+  }
+  #grid-gallery {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .my-grid-gallery .my-grid-photo {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+@media screen and (max-width: 712px) {
+  .my-gallery .my-photo {
+    width: 100%;
+    height: 250px;
+  }
+  .my-grid-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
